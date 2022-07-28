@@ -1,0 +1,53 @@
+        ul {}
+
+        ul li {
+            list-style-type: none;
+        }
+
+        li:hover {
+            background-color: rgb(216, 209, 209);
+            border-color: 1px solid gray;
+            cursor: pointer;
+        }
+
+        .qText,
+        .navigateQuestion {
+            border: 1px solid rgb(217, 211, 211);
+            margin: 0px 25px;
+            padding-left: 15px;
+        }
+
+        .navigateQuestion {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .next,
+        .prev,
+        .reset {
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .next:hover,
+        .prev:hover,
+        .reset:hover {
+            background-color: rgb(216, 209, 209);
+        }
+
+        .fa-solid {
+            font-size: 30px;
+        }
+
+        .img {
+            width: 20%;
+        }
+
+        .testSummery {
+            width: 80%;
+            text-align: left;
+            border: 1px solid black
+        }

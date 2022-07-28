@@ -1,0 +1,60 @@
+<div class="container w-800">
+    <div class="card w-800 p-5">
+        <h4>Angular Questions</h4>
+        <ng-container *ngIf="!isTestOver">
+            <div class="d-flex justify-content-between ">
+
+                <p class="score">
+                    Score : {{score}}
+                </p>
+                <p>Question {{currentQuestion+1}} of {{questionList.length}}</p>
+
+                <p><i class="fa-regular fa-clock"></i> {{counter}} Seconds
+                </p>
+
+
+            </div>
+            <div class="card m-2">
+                <div class="progress">
+
+                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{width:progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+            </div>
+
+            <div class="card pt-3">
+                <div class="qText">
+                    <h5>{{questionList[currentQuestion].questionText}}</h5>
+                </div>
+                <div class="option" *ngFor="let option of questionList[currentQuestion].options">
+                    <ul class="optionText">
+                        <li appChangeBg [isCorrect]=option.correct (click)="answer(currentQuestion,option)">{{option.text}}</li>
+                    </ul>
+                </div>
+                {{currentQuestion}}
+                <div class="navigateQuestion d-flex justify-content-between">
+                    <button class="prev" [disabled]="currentQuestion==0" (click)="previousQuest()"><i class="fa-solid fa-angles-left"></i></button>
+                    <button class="reset" (click)="resetQuest()"><i class="fa-solid fa-arrows-rotate"></i></button>
+                    <button class="next" (click)="nextQuestion()"><i class="fa-solid fa-angles-right"></i></button>
+
+                </div>
+            </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="!isTestOver">
+            <div class="d-flex justify-content-between ">
+                <div class="img"> <img src="../../../assets/download.png" width:50 height:50 alt="Congratulations">
+                </div>
+
+                <div class="TestSummery">
+                    <p>Total Questions Attempted :{{questionList.length}}</p>
+                    <p>Total Correct Answer(s) : {{correctAnswer}}</p>
+                    <p>Total incorrect Answer(s): {{inCorrectAnswer}}</p>
+                    <p>Total Score Points are : {{score}}</p>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
